@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RentalManagement"
+             xmlns:DB="clr-namespace:RentalManagement.Models.DB" x:Class="RentalManagement.topFiveRentedTrucksUC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="truckDataViewSource" />
+        <CollectionViewSource x:Key="truckDataViewSource1" d:DesignSource="{d:DesignInstance {x:Type DB:TruckData}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource truckDataViewSource1}">
+        <Button x:Name="showTopFiveTrucksBtn" Content="SHOW FIVE MOST RENTED TRUCKS" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="174,9,0,0" VerticalAlignment="Top" Width="433" Height="43" Click="ShowTopFiveTrucksBtn_Click"/>
+
+        <DataGrid x:Name="truckDataDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="146,57,193,193" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="colourColumn" Width="SizeToHeader" Header="colour" Binding="{Binding colour}"/>
+                <DataGridTextColumn x:Name="dailyRentalPriceColumn" Width="SizeToHeader" Header="Daily Rental Price" Binding="{Binding DailyRentalPrice}"/>
+                <DataGridTextColumn x:Name="manufacturerColumn" Width="SizeToHeader" Header="manufacturer" Binding="{Binding manufacturer}"/>
+                <DataGridTextColumn x:Name="modelColumn" Width="SizeToHeader" Header="model" Binding="{Binding model}"/>
+                <DataGridTextColumn x:Name="registrationNumberColumn" Width="SizeToHeader" Header="registration Number" Binding="{Binding registrationNumber}"/>
+                <DataGridTextColumn x:Name="truckIdColumn" Width="SizeToHeader" Header="Truck Id" Binding="{Binding TruckId}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

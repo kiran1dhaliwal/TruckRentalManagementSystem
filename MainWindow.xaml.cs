@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace RentalManagement
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+        
+
+        private void ViewFiveMostRentedTrucks_Click(object sender, RoutedEventArgs e)
+        {
+            CenterPanel.Children.Clear();
+            CenterPanel.Children.Add(new topFiveRentedTrucksUC());
+        }
+
+        private void ViewFiveLeastRentedTrucks_Click(object sender, RoutedEventArgs e)
+        {
+            CenterPanel.Children.Clear();
+            CenterPanel.Children.Add(new leastFiveRentedTrucks());
+        }
+
+        private void ViewSalesForSelectedMonth_Click(object sender, RoutedEventArgs e)
+        {
+            CenterPanel.Children.Clear();
+            CenterPanel.Children.Add(new salesForSelectedMonthUC());
+        }
+
+        private void ViewSalesBetweenSelectedDates_Click(object sender, RoutedEventArgs e)
+        {
+            CenterPanel.Children.Clear();
+            CenterPanel.Children.Add(new salesBetweenSelectedDatesUC());
+        }
+    }
+}

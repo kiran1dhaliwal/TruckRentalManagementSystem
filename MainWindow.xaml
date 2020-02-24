@@ -1,0 +1,26 @@
+﻿<Window x:Class="RentalManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Name="CenterPanel" HorizontalAlignment="Left" Height="368" Margin="0,53,0,-0.333" VerticalAlignment="Top" Width="793"/>
+        <Menu  HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="783">
+            
+            <MenuItem Header="                      View Truck Information      " FontSize="20" FontWeight="SemiBold">
+                <MenuItem Header="View Five Most Rented Trucks" Name="ViewFiveMostRentedTrucks" Click="ViewFiveMostRentedTrucks_Click"/>
+                <MenuItem Header="View Five Least Rented Trucks" Name="ViewFiveLeastRentedTrucks" Click="ViewFiveLeastRentedTrucks_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="               View Sales" FontSize="20" FontWeight="SemiBold">
+                <MenuItem Header="View Sales for Selected Month" Name="ViewSalesForSelectedMonth" Click="ViewSalesForSelectedMonth_Click"/>
+                <MenuItem Header="View Sales Between Selected Dates" Name="ViewSalesBetweenSelectedDates" Click="ViewSalesBetweenSelectedDates_Click"/>
+            </MenuItem>
+            
+        </Menu>
+
+    </Grid>
+</Window>
